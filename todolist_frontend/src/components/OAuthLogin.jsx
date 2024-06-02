@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 
 function OAuthLogin() {
-  document.body.classList.add("gradient-custom");
+  useEffect(() => {
+    document.body.classList.add("gradient-custom");
+
+    // Cleanup to remove the class when the component unmounts
+    return () => {
+      document.body.classList.remove("gradient-custom");
+    };
+  }, []);
+
+  const url = import.meta.env.VITE_BACK_URL;
 
   return (
     <section className="d-flex vh-100">
@@ -14,7 +23,7 @@ function OAuthLogin() {
             </p>
 
             <div className="mb-2">
-              <a href="http://localhost:8080/oauth2/authorization/google">
+              <a href={`${url}/oauth2/authorization/google`}>
                 <img src="/assets/img/google.png"></img>
               </a>
             </div>
