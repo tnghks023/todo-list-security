@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 
 function OAuthLogin() {
-  useEffect(() => {
-    document.body.classList.add("gradient-custom");
-
-    // Cleanup to remove the class when the component unmounts
-    return () => {
-      document.body.classList.remove("gradient-custom");
-    };
-  }, []);
-
+  document.body.classList.add("gradient-custom");
   const url = import.meta.env.VITE_BACK_URL;
 
   return (
