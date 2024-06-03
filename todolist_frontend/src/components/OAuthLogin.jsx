@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 function OAuthLogin() {
   document.body.classList.add("gradient-custom");
-  const url = import.meta.env.VITE_BACK_URL;
+  //const url = import.meta.env.VITE_BACK_URL;
+  const url = "http://localhost:8080";
 
   return (
     <section className="d-flex vh-100">
@@ -16,7 +17,12 @@ function OAuthLogin() {
 
             <div className="mb-2">
               <a href={`${url}/oauth2/authorization/google`}>
-                <img src="/assets/img/google.png"></img>
+                <img className="login-image" src="/assets/img/google.png"></img>
+              </a>
+            </div>
+            <div className="mb-2">
+              <a href={`${url}/oauth2/authorization/naver`}>
+                <img className="login-image" src="/assets/img/naver.png"></img>
               </a>
             </div>
           </div>

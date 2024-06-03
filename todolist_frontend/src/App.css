@@ -57,3 +57,9 @@
     rgba(37, 117, 252, 1)
   );
 }
+
+.login-image {
+  height: 50px; /* Set a fixed height */
+  width: 200px; /* Width adjusts automatically */
+  object-fit: contain; /* Maintain aspect ratio */
+}
