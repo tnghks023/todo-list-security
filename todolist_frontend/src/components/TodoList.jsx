@@ -111,7 +111,11 @@ const TodoList = () => {
         : null}
 
       <div className="pagination mt-4">
-        <button className="me-2" onClick={() => handlePageChange(0)}>
+        <button
+          disabled={page <= 0}
+          className="me-2"
+          onClick={() => handlePageChange(0)}
+        >
           First
         </button>
         <button
@@ -142,6 +146,7 @@ const TodoList = () => {
         <button
           className="ms-2"
           onClick={() => handlePageChange(totalPages - 1)}
+          disabled={page >= totalPages - 1}
         >
           Last
         </button>
