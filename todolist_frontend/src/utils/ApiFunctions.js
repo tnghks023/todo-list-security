@@ -7,33 +7,36 @@ export const api = axios.create({
   baseURL: backUrl,
 });
 
-// export async function loginUser(login) {
+// export async function getTodoList() {
+//   const headers = {
+//     Authorization: "Bearer " + localStorage.getItem("access_token"),
+//   };
+//   const body = {};
 //   try {
-//     const response = await api.post("/login", login);
-//     if (response.status >= 200 && response.status < 300) {
-//       return response.data;
-//     } else {
-//       return null;
-//     }
+//     const response = await api.get("/todo", { headers, body });
+//     return response.data;
 //   } catch (error) {
 //     console.error(error);
-//     return null;
+//     throw new Error("Error");
 //   }
 // }
 
-export async function getTodoList() {
+export const getTodoList = async (page = 0, size = 5) => {
   const headers = {
     Authorization: "Bearer " + localStorage.getItem("access_token"),
   };
   const body = {};
   try {
-    const response = await api.get("/todo", { headers, body });
+    const response = await api.get(`/todo?page=${page}&size=${size}`, {
+      headers,
+      body,
+    });
     return response.data;
   } catch (error) {
     console.error(error);
     throw new Error("Error");
   }
-}
+};
 
 // todo insert
 export async function insertTodo(input) {

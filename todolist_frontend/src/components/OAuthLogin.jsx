@@ -25,6 +25,18 @@ function OAuthLogin() {
                 <img className="login-image" src="/assets/img/naver.png"></img>
               </a>
             </div>
+            <div
+              className="mb-2"
+              style={{
+                border: "1px solid white",
+                borderRadius: "1rem",
+                background: "gray",
+              }}
+            >
+              <a href={`${url}/oauth2/authorization/github`}>
+                <img className="login-image" src="/assets/img/github.png"></img>
+              </a>
+            </div>
           </div>
         </div>
       </div>

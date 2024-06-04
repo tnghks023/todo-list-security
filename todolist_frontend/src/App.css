@@ -63,3 +63,7 @@
   width: 200px; /* Width adjusts automatically */
   object-fit: contain; /* Maintain aspect ratio */
 }
+
+.pagination-item.active {
+  font-weight: bold;
+}
