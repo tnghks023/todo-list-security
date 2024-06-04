@@ -53,7 +53,7 @@ const TodoList = () => {
         setTotalPages(data.totalPages);
       });
     });
-
+    handlePageChange(0);
     setInput("");
   }
 
@@ -69,6 +69,7 @@ const TodoList = () => {
   function handleDeleteTodo(id) {
     deleteTodo(id);
     setTodoList(todoList.filter((todo) => todo.id !== id));
+    handlePageChange(0);
   }
 
   function changeText(e) {
